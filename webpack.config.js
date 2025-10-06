@@ -2,12 +2,18 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // можно потом production
+  mode: 'development', // можно поменять на 'production' для деплоя
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  resolve: {
+    fallback: {
+      path: require.resolve('path-browserify'),
+      os: require.resolve('os-browserify/browser')
+    }
   },
   module: {
     rules: [
