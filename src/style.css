@@ -1,27 +1,19 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.grid {
+.game-board {
   display: grid;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: repeat(4, 100px);
-  gap: 10px;
+  gap: 5px;
 }
-
 .cell {
   width: 100px;
   height: 100px;
-  background-color: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid #000;
+  position: relative;
 }
-
 .goblin {
   width: 80px;
   height: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }

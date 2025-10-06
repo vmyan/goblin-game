@@ -1,27 +1,33 @@
 import './style.css';
-import goblin from './goblin.png';
+import goblin from './assets/goblin.png';
 
-const container = document.getElementById('game-container');
-const grid = document.createElement('div');
-grid.classList.add('grid');
-container.appendChild(grid);
+const gridSize = 4;
+const gameBoard = document.createElement('div');
+gameBoard.className = 'game-board';
+document.body.appendChild(gameBoard);
 
-for (let i = 0; i < 16; i++) {
+// Создаём поле 4x4
+for (let i = 0; i < gridSize * gridSize; i++) {
   const cell = document.createElement('div');
-  cell.classList.add('cell');
-  grid.appendChild(cell);
+  cell.className = 'cell';
+  gameBoard.appendChild(cell);
 }
 
+// Создаём персонажа
 const img = document.createElement('img');
 img.src = goblin;
-img.classList.add('goblin');
-grid.children[Math.floor(Math.random() * 16)].appendChild(img);
+img.className = 'goblin';
+moveGoblin();
 
-setInterval(() => {
-  const current = img.parentElement;
+// Перемещение персонажа каждые 1.5 секунды
+setInterval(moveGoblin, 1500);
+
+function moveGoblin() {
+  const cells = document.querySelectorAll('.cell');
   let newCell;
   do {
-    newCell = grid.children[Math.floor(Math.random() * 16)];
-  } while (newCell === current);
+    newCell = cells[Math.floor(Math.random() * cells.length)];
+  } while (newCell.contains(img));
+
   newCell.appendChild(img);
-}, 1000);
+}

@@ -1,7 +1,5 @@
-# 🎯 AHJ Goblin Game
+# Goblin Game
 
-Игра с перемещающимся гоблином на поле 4x4, собранная с помощью Webpack, Babel, ESLint и Jest.
+![Build and Deploy](https://github.com/vmyan/goblin-game/actions/workflows/deploy.yml/badge.svg)
 
-🎮 [Открыть игру на GitHub Pages](https://vmyan.github.io/goblin-game/)
-
-![Build Status](https://github.com/vmyan/goblin-game/actions/workflows/deploy.yml/badge.svg)
+Ссылка на GitHub Pages: [https://vmyan.github.io/goblin-game/](https://vmyan.github.io/goblin-game/)
