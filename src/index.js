@@ -4,13 +4,13 @@ import goblin from './assets/goblin.png';
 const gridSize = 4;
 const gameBoard = document.createElement('div');
 gameBoard.className = 'game-board';
-document.body.appendChild(gameBoard);
+document.body.append(gameBoard);
 
 // Создаём поле 4x4
 for (let i = 0; i < gridSize * gridSize; i++) {
   const cell = document.createElement('div');
   cell.className = 'cell';
-  gameBoard.appendChild(cell);
+  gameBoard.append(cell);
 }
 
 // Создаём персонажа
@@ -29,5 +29,5 @@ function moveGoblin() {
     newCell = cells[Math.floor(Math.random() * cells.length)];
   } while (newCell.contains(img));
 
-  newCell.appendChild(img);
+  newCell.append(img);
 }
